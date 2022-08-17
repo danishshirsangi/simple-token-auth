@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <style>
+        td{
+            margin: 2px 5px;
+            padding: 4px 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <table>
+        {% for user in users%}
+            <tr>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.blood_group}}</td>
+                <td>{{user.mobile}}</td>
+                <td>{{user.address}}</td>
+            </tr>
+        {%endfor%}
+    </table>
+
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
